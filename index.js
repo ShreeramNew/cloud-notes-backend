@@ -6,7 +6,10 @@ const ConnectToMongo=require('./DataBase')
 ConnectToMongo();
 app.use(cors())
 app.use(express.json())
+
 app.use("/",require('./routers/SaveNote'))
+app.use("/note",require('./routers/AccessPerticularNote'))
+
 app.listen(PORT,()=>{
     console.log('Ready to listen');
 })

@@ -8,6 +8,7 @@ router.post("/", async (req, res) => {
    console.log("Saved Succefully!");
    res.send("Super");
 });
+
 router.get("/", async (req, res) => {
    Notes.find({})
       .then((results) => {
