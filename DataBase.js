@@ -1,7 +1,18 @@
-const mongoose=require('mongoose')
-const ConectionUri="mongodb://127.0.0.1:27017/Notes"
-const ConnectToMongo=async ()=>{
-    await mongoose.connect(ConectionUri)
-    console.log("Conection Done!");
-}
-module.exports=ConnectToMongo
+const mysql=require('mysql');
+require('dotenv').config();
+
+const connection=mysql.createConnection({
+    host:process.env.DB_HOST,
+    user:process.env.DB_USER,
+    database:process.env.DB_NAME,
+})
+
+connection.connect((err)=>{
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("Connected Succefully!");
+    }
+})
+module.exports=connection;
