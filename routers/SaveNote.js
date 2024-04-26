@@ -13,17 +13,14 @@ router.post("/", (req, res) => {
       [uniqueId, body.email, body.title, body.content],
       (err, result) => {
          if (err) {
-            console.log(err);
+            res.status(400).json(err.code);
          } else {
-            console.log(result);
-            console.log("Saved Succefully!");
+           res.status(201).json({
+            aknowledge:"Notes saved succeffully"
+           })
          }
       }
    );
-   res.send("Super");
 });
 
-router.get("/",(req, res) => {
- //Nothing
-});
 module.exports = router;
