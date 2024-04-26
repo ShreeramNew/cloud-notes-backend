@@ -8,6 +8,8 @@ app.use(express.json());
 app.use("/notes", require("./routers/GetNotes")); //To access all or perticular notes
 app.use("/save", require("./routers/SaveNote")); // To Save notes
 app.use("/delete", require("./routers/DeleteNote")); //To delete a perticular note
+app.use("/update", require("./routers/UpdateNote")); //To update a perticular note
+
 
 
 app.listen(PORT, () => {
