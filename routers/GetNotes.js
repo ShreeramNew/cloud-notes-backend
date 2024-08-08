@@ -3,7 +3,6 @@ const router = express.Router();
 const connection = require("../DataBase");
 
 router.get("/", async (req, res) => {
-   // console.log(req);
    const noteId = req.query.id;
    if (noteId) {
       //If id is provided, then fetch perticular note
@@ -23,6 +22,7 @@ router.get("/", async (req, res) => {
          if (err) {
             res.status(400).json(err.code)
          } else {
+            console.log(result);
             res.status(200).json(result);
          }
       });
