@@ -11,6 +11,7 @@ app.use(express.json());
 
 
 app.use("/signup",require("./routers/SignUp"));//To create new account
+app.use("/login",require("./routers/Login"));//To login
 app.use("/notes", require("./routers/GetNotes")); //To access all or perticular notes
 app.use("/save", require("./routers/SaveNote")); // To Save notes
 app.use("/delete", require("./routers/DeleteNote")); //To delete a perticular note
