@@ -15,13 +15,8 @@ app.use(express.json());
 app.use(cookieParse());
 
 
-app.use("/signup", require("./routers/SignUp")); //To create new account
-app.use("/login", require("./routers/Login")); //To login
-app.use("/getUsers", require("./routers/GetAllUsers")); //To get all usernames
-app.use("/notes", require("./routers/GetNotes")); //To access all or perticular notes
-app.use("/save", require("./routers/SaveNote")); // To Save notes
-app.use("/delete", require("./routers/DeleteNote")); //To delete a perticular note
-app.use("/update", require("./routers/UpdateNote")); //To update a perticular note
+app.use("/api/auth", require("./routers/Authentication")); //Everything related to authenticatio
+app.use("/api/notes", require("./routers/Notes")); //Everything related to user's note
 
 app.listen(PORT, () => {
    console.log("Ready to listen!");
