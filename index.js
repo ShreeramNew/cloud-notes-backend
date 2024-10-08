@@ -1,6 +1,6 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
-const PORT = 5000;
 const cors = require("cors");
 const cookieParse=require('cookie-parser');
 
@@ -18,6 +18,6 @@ app.use(cookieParse());
 app.use("/api/auth", require("./routers/Authentication")); //Everything related to authenticatio
 app.use("/api/notes", require("./routers/Notes")); //Everything related to user's note
 
-app.listen(PORT, () => {
+app.listen(5000, () => {
    console.log("Ready to listen!");
 });

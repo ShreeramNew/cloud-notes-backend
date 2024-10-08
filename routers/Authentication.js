@@ -9,4 +9,5 @@ router.post("/signup", HashPassword, postController.createAccount); //create a n
 router.post("/login", postController.login);// Authenticate a existing user
 router.get("/getUsers", getController.getAllUser);// Get all user names
 
+
 module.exports = router;
